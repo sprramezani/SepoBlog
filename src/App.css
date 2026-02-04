@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: yekanLight;
+  src: url("./assets/font/YekanBakhFaNum-Light.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: yekanRegular;
+  src: url("./assets/font/YekanBakhFaNum-Regular.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: yekanSemiBold;
+  src: url("./assets/font/YekanBakhFaNum-SemiBold.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: yekanBold;
+  src: url("./assets/font/YekanBakhFaNum-Bold.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: yekanExtraBold;
+  src: url("./assets/font/YekanBakhFaNum-ExtraBold.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: yekanBlack;
+  src: url("./assets/font/YekanBakhFaNum-Black.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: yekanExtraBlack;
+  src: url("./assets/font/YekanBakhFaNum-ExtraBlack.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: yekanSemiBold;
+  background-color: #F8FAFC;
+}
