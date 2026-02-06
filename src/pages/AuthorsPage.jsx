@@ -2,18 +2,19 @@ import { useQuery } from "@apollo/client/react";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { GET_AUTHOR_INFO } from "../graphql/queries";
+import Loader from "../components/Loader";
 
 function AuthorsPage() {
   const { slug } = useParams();
   const { loading, error, data } = useQuery(GET_AUTHOR_INFO, {
     variables: { slug },
   });
-  if (loading) return <p>Loading ...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>Error ...</p>;
   return (
     <section className="mt-35 max-w-[1360px] mx-auto">
-      <div className="flex h-[450px] gap-x-5 ">
-        <div className="bg-white w-300 pt-10 text-center rounded-2xl shadow-xl">
+      <div className="md:flex h-[450px] gap-x-5 space-y-5 px-7 md:px-0">
+        <div className="bg-white md:w-300 py-10 h-full text-center rounded-2xl shadow-xl">
           <div className="w-70 h-70 overflow-hidden rounded-full mx-auto border-8 border-gray-200">
             <img
               src={data.author.avatar.url}
@@ -33,7 +34,7 @@ function AuthorsPage() {
           </p>
         </div>
       </div>
-      <div className="justify-center mb-25 mt-15">
+      <div className="justify-center mb-25 md:mt-15 mt-165">
         <h2 className="text-3xl font-[yekanBold] text-center my-10">
           مقالات {data.author.name}
         </h2>

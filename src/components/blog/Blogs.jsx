@@ -1,17 +1,18 @@
-
 import { useQuery } from "@apollo/client/react";
 import { ChevronsLeft } from "lucide-react";
-import { GET_BLOG_INFO } from "../../graphql/queries";
+import { GET_BLOGS_INFO } from "../../graphql/queries";
+import { Link } from "react-router-dom";
+import Loader from "../Loader";
 
 function Blogs() {
-  const { loading, error, data } = useQuery(GET_BLOG_INFO);
-  if (loading) return <p>Loading ...</p>;
+  const { loading, error, data } = useQuery(GET_BLOGS_INFO);
+  if (loading) return <Loader />;
   if (error) return <p>Error ...</p>;
   return (
     <div className="px-7 md:px-20 max-w-[1360px] mx-auto">
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-3xl font-[yekanBold] text-center my-10">جدیدترین مقالات</h2>
-        <button className="flex items-center gap-x-1 text-[#4F8DF7] cursor-pointer">
+        <h2 className="text-xl md:text-3xl font-[yekanBold] text-center my-10">جدیدترین مقالات</h2>
+        <button className="flex items-center text-sm gap-x-1 text-[#4F8DF7] cursor-pointer">
           مشاهده بیشتر
           <ChevronsLeft size={18} />
         </button>
@@ -32,9 +33,9 @@ function Blogs() {
                 {post.content.text}
               </p>
             </div>
-            <button className="w-full bg-linear-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 shadow-md shadow-blue-500/50 hover:shadow-blue-600/50 transition-all duration-300 font-[yekanBold] text-white py-3 rounded-lg cursor-pointer">
+            <Link to={`/blogs/${post.slug}`} className="w-full relative -top-1 bg-linear-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 shadow-md shadow-blue-500/50 hover:shadow-blue-600/50 transition-all duration-300 font-[yekanBold] text-white py-3 flex justify-center rounded-lg cursor-pointer">
               مشاهده مقاله
-            </button>
+            </Link>
           </div>
         ))}
       </div>

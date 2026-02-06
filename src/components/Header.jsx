@@ -23,7 +23,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-5 py-2">
       <div
-        className={`mx-auto max-w-[1360px] flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-300
+        className={`mx-auto max-w-[1360px] flex items-center justify-between px-4 md:px-6 py-4 rounded-xl transition-all duration-300
         ${
           isHomePage
           ?
