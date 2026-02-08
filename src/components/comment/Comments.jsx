@@ -4,6 +4,9 @@ function Comments({ data }) {
   return (
     <div className="p-5 bg-white rounded-2xl shadow-xl mt-10">
       <h3 className="text-xl font-[YekanBold] mb-5">نظرات</h3>
+      {data.post.comment.length === 0 && (
+        <p className="text-gray-500 text-center py-10">هنوز نظری ثبت نشده است.</p>
+      ) }
       {data.post.comment.map((comment, index) => (
         <div
           key={index}
