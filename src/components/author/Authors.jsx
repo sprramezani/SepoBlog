@@ -18,7 +18,7 @@ function Authors() {
           نویسندگان
         </h2>
         <button className="flex items-center text-sm gap-x-1 text-[#4F8DF7] cursor-pointer">
-          مشاهده همه
+          مشاهده بیشتر 
           <ChevronsLeft size={18} />
         </button>
       </div>

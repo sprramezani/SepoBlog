@@ -20,6 +20,7 @@ const GET_BLOG_INFO = gql`
   query getBlogInfo($slug: String!) {
     post(where: { slug: $slug }) {
       title
+      slug
       coverPhoto {
         url
       }
@@ -35,6 +36,11 @@ const GET_BLOG_INFO = gql`
       }
       content {
         html
+      }
+      comment {
+        email
+        text
+        name
       }
     }
   }

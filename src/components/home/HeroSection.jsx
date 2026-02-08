@@ -1,20 +1,18 @@
 import { ChevronsDown, Search } from "lucide-react";
 import BgHero from "../../assets/image/herosectionbg.jpg";
+import SearchBox from "./SearchBox";
 
 function HeroSection() {
   return (
-    <section className="relative h-[80vh] overflow-hidden">
-      {/* Background Image */}
+    <section className="relative h-[90vh] overflow-hidden">
       <img
         src={BgHero}
         className="absolute inset-0 w-full h-full object-cover scale-105 blur-sm"
         alt="Hero Background"
       />
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h2 className="text-4xl font-[yekanExtraBold] text-white drop-shadow-lg">
           سپوبلاگ | وبلاگ مقالات عمومی و آموزشی
@@ -25,18 +23,9 @@ function HeroSection() {
           روز را مطالعه کنید
         </p>
 
-        {/* Search Box */}
-        <div className="bg-white flex px-4 w-full max-w-md justify-between items-center rounded-xl my-10 shadow-lg">
-          <input
-            type="text"
-            className="py-4 outline-none w-full text-sm"
-            placeholder="دنبال چه مطلبی میگردی؟"
-          />
-          <Search className="text-blue-500" />
-        </div>
+        <SearchBox />
       </div>
 
-      {/* Animated Wave */}
       <div className="absolute bottom-0 left-0 w-full leading-[0] z-10">
         <svg
           className="block w-full h-[160px]"
