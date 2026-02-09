@@ -1,4 +1,3 @@
-import React, { use, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { GET_BLOG_INFO, GET_BLOGS_INFO } from "../../graphql/queries";
 import { useQuery } from "@apollo/client/react";

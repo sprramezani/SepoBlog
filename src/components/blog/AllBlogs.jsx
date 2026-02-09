@@ -4,21 +4,17 @@ import { GET_BLOGS_INFO } from "../../graphql/queries";
 import { Link } from "react-router-dom";
 import Loader from "../Loader";
 
-function Blogs() {
+function AllBlogs() {
   const { loading, error, data } = useQuery(GET_BLOGS_INFO);
   if (loading) return <Loader />;
   if (error) return <p>Error ...</p>;
   return (
-    <div className="px-7 md:px-20 max-w-[1360px] mx-auto">
+    <section className="mt-30 md:mt-35 px-7 md:px-0 max-w-[1360px] mx-auto">
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-xl md:text-3xl font-[yekanBold] text-center my-10">جدیدترین مقالات</h2>
-        <Link to="/blogs" className="flex items-center text-sm gap-x-1 text-[#4F8DF7] cursor-pointer">
-          مشاهده بیشتر
-          <ChevronsLeft size={18} />
-        </Link>
+        <h2 className="text-xl md:text-3xl font-[yekanBold] text-center my-10">مقالات</h2>
       </div>
       <div className="w-full justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20">
-        {data.posts.slice(0, 6).map((post) => (
+        {data.posts.map((post) => (
           <div key={post.id} className="w-80 md:w-90 bg-white p-5 rounded-2xl relative shadow-lg">
             <div className="w-70 md:w-80 h-40 md:h-50 object-cover -top-15 relative shadow-lg rounded-xl overflow-hidden">
               <img
@@ -39,8 +35,8 @@ function Blogs() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
-export default Blogs;
+export default AllBlogs;

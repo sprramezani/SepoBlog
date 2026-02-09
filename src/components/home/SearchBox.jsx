@@ -35,7 +35,7 @@ function SearchBox() {
       style={{
         top: resultsPosition.top,
       }}
-      className="bg-white rounded-xl mt-5 absolute overflow-y-auto z-50 max-h-[14rem] shadow-xl w-full max-w-md left-[35.3%]"
+      className="bg-white rounded-xl md:mt-5 absolute overflow-y-auto z-40 max-h-[14rem] shadow-xl w-full max-w-md left-1/2 -translate-x-1/2"
     >
       {loading && <Loader />}
       {error && (
